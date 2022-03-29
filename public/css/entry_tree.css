@@ -1,0 +1,55 @@
+.header .title {
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(211, 66, 66), rgb(21, 39, 201));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tree-view {
+    min-height: 500px;
+}
+
+.footer {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.caret {
+    cursor: pointer;
+    user-select: none;
+}
+
+.caret::before {
+    content: url('/public/assets/images/expand.gif');
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    content: url('/public/assets/images/collapse.gif');
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.leaf::before {
+    content: url('/public/assets/images/blank.gif');
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+.tree-view > .nested {
+    display: block;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}

@@ -10,21 +10,26 @@ use App\Models\TreeEntry;
  * Feel free to remove the echos :)
  */
 
-class myTreeView extends abstractTreeView {
+class myTreeView extends abstractTreeView 
+{
 	
-	public function showCompleteTree() {
-
+	public function showCompleteTree() 
+	{
 		$entryList =  (new TreeEntry)->getAll();
-		$tree = buildTreeRecursively($entryList);
+		$dataTree = buildTreeRecursively($entryList);
 		
-		return $tree;
+		return $dataTree;
 	}
 	
-	public function showAjaxTree() {
-		echo 'Show Ajax Tree<br>';
+	public function showAjaxTree() 
+	{
+		$children =  (new TreeEntry)->getChildrenById(0);
+		return $children;
 	}
 	
-	public function fetchAjaxTreeNode($entry_id) {
-		echo 'fetchAjaxTreeNode for entry_id ('.$entry_id.')<br>';
+	public function fetchAjaxTreeNode($entry_id) 
+	{
+		$children =  (new TreeEntry)->getChildrenById($entry_id);
+		return $children;
 	}
 }

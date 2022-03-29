@@ -16,4 +16,22 @@ class TreeEntryController extends Controller
         $response = new JsonResponse($content);
         $response->send();
     }
+
+    public function getRootEntry()
+    {
+        $treeview = new myTreeView();
+        $children = $treeview->showAjaxTree();
+
+        $response = new JsonResponse($children);
+        $response->send();
+    }
+
+    public function getChildren($id)
+    {
+        $treeview = new myTreeView();
+        $children = $treeview->fetchAjaxTreeNode($id);
+
+        $response = new JsonResponse($children);
+        $response->send();
+    }
 }
