@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Treeview{% endblock %}
+
+{% block stylesheet %}
+
+<style>
+    /* Remove default bullets */
+    ul {
+        list-style-type: none;
+    }
+
+    /* Style the caret/arrow */
+    .caret {
+        cursor: pointer;
+        user-select: none; /* Prevent text selection */
+    }
+
+    /* Create the caret/arrow with a unicode, and style it */
+    .caret::before {
+        content: url('/public/assets/images/expand.gif');
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+    /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+    .caret-down::before {
+        content: url('/public/assets/images/collapse.gif');
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+    .leaf::before {
+        content: url('/public/assets/images/blank.gif');
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+    /* Hide the nested list */
+    .nested {
+        display: none;
+    }
+
+    /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+    .active {
+        display: block;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="tree-view"></div>
+{% endblock %}
+
+{% block foot_scripts %}
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url : '/tree-entry',
+                type : 'GET',
+                dataType:'json',
+                success : function(data) {              
+                    const html = listHtml(data);
+                    $('.tree-view').html(html);
+
+                    let toggler = document.getElementsByClassName("caret");
+                    let i;
+
+                    for (i = 0; i < toggler.length; i++) {
+                        toggler[i].addEventListener("click", function() {
+                            this.parentElement.querySelector(".nested").classList.toggle("active");
+                            this.classList.toggle("caret-down");
+                        });
+                    }
+                },
+                error : function(request, error) {
+                    console.log('Request: ' + JSON.stringify(request));
+                }
+            });
+        });
+
+        function listHtml(tree, i = 0) {
+            return  '<ul ' + (i != 0 ? 'class="nested"' : '') + '>' + tree.map(node => 
+                        '<li>' +
+                            '<span class="' + (node?.children?.length > 0 ? 'caret' : 'leaf') + '">' + node.name + '</span>' +
+                            (node?.children?.length > 0 ? listHtml(node.children, ++i) : '') +
+                        '</li>').join('\n') +
+                    '</ul>';
+        }
+    </script>
+{% endblock %}

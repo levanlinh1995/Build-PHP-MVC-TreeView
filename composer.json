@@ -1,0 +1,15 @@
+{
+    "require": {
+        "twig/twig": "~3.0",
+        "symfony/routing": "^5.4",
+        "symfony/http-foundation": "^5.4",
+        "doctrine/dbal": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        },
+        "files": ["helpers/helpers.php"]
+    }
+}

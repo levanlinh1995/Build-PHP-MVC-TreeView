@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- script -->
+    <script src="public/js/libraries/jquery/jquery-3.6.0.min.js"></script>
+
+    {% block head_scripts %}{% endblock %}
+
+    <!-- stylesheet -->
+    {% block stylesheet %}{% endblock %}
+    
+</head>
+<body>
+    {% block body %}{% endblock %}
+
+    {% block foot_scripts %}{% endblock %}
+</body>
+</html>
