@@ -34,6 +34,7 @@ class TreeEntry extends Model
                     WHERE
                         tel.entry_id = tel2.entry_id
                         AND tel2.lang = 'ger'))
+            ORDER BY tel.name
         ";
 
         $result = $db->fetchAllAssociative($sql);
@@ -77,6 +78,8 @@ class TreeEntry extends Model
                 WHERE
                     tel.entry_id = tel2.entry_id
                     AND tel2.lang = 'ger'))
+        ORDER BY tel.name
+
         ";
 
         $resultSet = $db->executeQuery($sql, [$parentId]);

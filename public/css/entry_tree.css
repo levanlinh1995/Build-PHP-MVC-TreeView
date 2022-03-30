@@ -7,14 +7,12 @@
 
 .tree-view {
     min-height: 500px;
+    margin-left: 50px;
+    height: auto;
 }
 
 .footer {
     text-align: center;
-}
-
-ul {
-    list-style-type: none;
 }
 
 .caret {
@@ -52,4 +50,43 @@ ul {
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
 .active {
     display: block;
+}
+
+.tree-view ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tree-view ul {
+    padding-left: 1em;
+}
+
+.tree-view li {
+    padding-left: 1em;
+    border: 1px dotted black;
+    border-width: 0 0 1px 1px;
+}
+
+.tree-view li.li-container {
+    border-bottom: 0px;
+}
+
+.tree-view li p {
+    margin: 0;
+    background: white;
+    position: relative;
+    top: 0.5em;
+}
+
+.tree-view li ul {
+    border-top: 1px dotted black;
+    margin-left: -1em;
+    padding-left: 1.3em;
+
+}
+
+.tree-view ul li:last-child ul {
+    border-left: 1px solid white;
+    margin-left: -17px;
 }
