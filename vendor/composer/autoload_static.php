@@ -30,6 +30,7 @@ class ComposerStaticInit7096fc2f5467fd88cb5f526e9676c8c4
         'T' => 
         array (
             'Twig\\' => 5,
+            'Tests\\' => 6,
         ),
         'S' => 
         array (
@@ -84,6 +85,10 @@ class ComposerStaticInit7096fc2f5467fd88cb5f526e9676c8c4
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
