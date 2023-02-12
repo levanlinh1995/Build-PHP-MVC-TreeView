@@ -1,5 +1,3 @@
-# Developer Code Test
-For all new Full-Stack Developers being evaluated to join Xenia. The point is to get a quick look at general code style/habits/problem solving abilities. The task is not difficult on purpose so it can be implemented without investing too much time.
 
 ## 1.0 Introduction
 
@@ -14,22 +12,6 @@ However check section 5 for more Infos on that.
 - In case you have suggestions on how to better structure the database please add these to the solution email
 
 Note: In the following text "node" and "entry" are used as synonyms.
-
-### 1.1. How to Submit your Result
-
-1. Put your solution in an archive (e.g. ZIP, TAR) and name the archive file lastname_firstname_dev_test.zip
-2. Upload your solution to the private cloud storage of your choice (e.g. Google Drive, Dropbox)
-3. Share this file with us through a link you create in your cloud storage
-4. Send us an e-mail:
-  * Subject: Test Result firstname lastname
-  * To: the person who sent you the original mail
-  * Body:
-    * the link where we can download your solution
-    * any additional information you like to pass to us (e.g. why you solved things in a certain way, etc.)
-
-### 1.2 Questions:
-
-If you have any questions feel free to drop me a mail with "Code Test Question" in the subject to [hoang@xenia.tech](hoang@xenia.tech)
 
 ## 2.0 DB Structure
 
@@ -80,7 +62,6 @@ Note: Images for the treeview are provided in the images folder
 9. Must run on PHP 7.2
 10. Completing the assignment in Symfony 4 and/or React is a plus
 11. Error level must not be changed or hidden and no notices/warnings/errors should be produced by your code
-12. Do not upload the code test and/or your solution to a public repository
 
 ## 5. Expected Result:
 
